@@ -6,7 +6,8 @@ import Footer from "./components/Footer";
 import Home from "./Home";
 import About from "./About";
 import Services from "./Services";
-import Contact from "./Contact";
+// import Contact from "./Contact";
+import Contact from "./components/Contact";
 
 function App() {
   return (
