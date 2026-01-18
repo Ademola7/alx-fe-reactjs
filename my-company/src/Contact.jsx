@@ -1,18 +1,9 @@
 import { useState } from "react";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,26 +19,26 @@ function Contact() {
           type="text"
           name="name"
           placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          style={{ display: "block", margin: "10px 0", padding: "8px" }}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          style={{ display: "block", margin: "10px 0" }}
         />
 
         <input
           type="email"
           name="email"
           placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          style={{ display: "block", margin: "10px 0", padding: "8px" }}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          style={{ display: "block", margin: "10px 0" }}
         />
 
         <textarea
           name="message"
           placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          style={{ display: "block", margin: "10px 0", padding: "8px" }}
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          style={{ display: "block", margin: "10px 0" }}
         />
 
         <button type="submit">Send Message</button>
